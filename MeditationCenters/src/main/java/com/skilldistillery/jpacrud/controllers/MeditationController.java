@@ -11,6 +11,7 @@ public class MeditationController {
 	@RequestMapping(path = "index.do", method=RequestMethod.GET)
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView();
+		mv.addObject("message", "Hello");
 		mv.setViewName("WEB-INF/views/index.jsp");
 		return mv;
 	}

@@ -12,7 +12,7 @@ public interface BookDAO {
 	public List<Book> getBooks();
 	public Book getBookById(int id);
 	public Book addBook(Book book);
-	public boolean removeBook(Book book);
+	public boolean removeBook(int bookId);
 	public Book updateBook(Book book);
 	
 

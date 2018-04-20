@@ -20,7 +20,7 @@ public class CenterDAOImpl implements CenterDAO {
 
 	@Override
 	public List<Center> getCenters() {
-		String sql = "get c from Center c";
+		String sql = "select c from Center c";
 		List<Center> centers = new ArrayList<>();
 		centers = em.createQuery(sql, Center.class).getResultList();
 
@@ -36,19 +36,16 @@ public class CenterDAOImpl implements CenterDAO {
 
 	@Override
 	public Center addCenter(Center center) {
-		em.getTransaction().begin();
 		em.persist(center);
 		em.flush();
-		em.getTransaction().commit();
 		return center;
 	}
 
 	@Override
-	public boolean removeCenter(Center center) {
-		em.getTransaction().begin();
+	public boolean removeCenter(int centerId) {
+		Center center = getCenterById(centerId);
 		em.remove(center);
 		em.flush();
-		em.getTransaction().commit();
 		if (em.contains(center)) {
 			return false;
 		} else {
@@ -59,7 +56,6 @@ public class CenterDAOImpl implements CenterDAO {
 	@Override
 	public Center updateCenter(Center center) {
 		Center managed = em.find(Center.class, center.getId());
-		em.getTransaction().begin();
 		
 		managed.setName(center.getName());
 		managed.setDescription(center.getDescription());
@@ -72,7 +68,6 @@ public class CenterDAOImpl implements CenterDAO {
 		managed.setMap(center.getMap());
 		
 		em.flush();
-		em.getTransaction().commit();
 
 		return managed;
 	}

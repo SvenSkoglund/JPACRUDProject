@@ -12,7 +12,7 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>${teacher.firstName }${teacher.lastName }</title>
+<title>${message}</title>
 </head>
 <body>
 	<style type="text/css">
@@ -40,18 +40,12 @@ div {
 }
 </style>
 
-	<div>
-		<h5>
-			${teacher.firstName} ${teacher.lastName}
-			<p>${teacher.tradition}</p>
-			<h5>
-				<p>${teacher.description}</p>
-				<h5>
-					<a class="center" href="deleteTeacher.do?teacherId=${teacher.id }">Delete
-						Teacher</a>
+		<div>
+			<h1>
+				${message}
 
-					<%-- 	<p>${film.description}</p> --%>
-	</div>
+				<%-- 	<p>${film.description}</p> --%>
+		</div>
 
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

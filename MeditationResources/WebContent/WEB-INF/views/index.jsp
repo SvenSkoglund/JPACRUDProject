@@ -7,7 +7,7 @@
 <title>Meditation Centers</title>
 </head>
 <body>
-<form action="indexChoice.do">
+<form action="indexChoice.do" method="get">
   <button name="choice" type="submit" value="teachers">Teachers</button>
   <button name="choice" type="submit" value="centers">Centers</button>
   <button name="choice" type="submit" value="books">Books</button>

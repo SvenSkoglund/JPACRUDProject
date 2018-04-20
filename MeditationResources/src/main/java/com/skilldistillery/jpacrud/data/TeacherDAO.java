@@ -10,9 +10,9 @@ import com.skilldistillery.jpacrud.entities.Teacher;
 public interface TeacherDAO {
 
 	public List<Teacher> getTeachers();
-	Teacher getTeacherById(int id);
+	Teacher getTeacherById(Integer id);
 	public Teacher addTeacher(Teacher teacher);
-	public boolean removeTeacher(Teacher teacher);
+	public boolean removeTeacher(int teacherId);
 	public Teacher updateTeacher(Teacher teacher);
 	
 	

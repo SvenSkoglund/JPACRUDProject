@@ -22,7 +22,7 @@ public class TeacherDAOImpl implements TeacherDAO {
 
 	@Override
 	public List<Teacher> getTeachers() {
-		String sql = "get t from Teacher t";
+		String sql = "select t from Teacher t";
 		List<Teacher> teachers = new ArrayList<>();
 		teachers = em.createQuery(sql, Teacher.class).getResultList();
 
@@ -30,7 +30,7 @@ public class TeacherDAOImpl implements TeacherDAO {
 	}
 
 	@Override
-	public Teacher getTeacherById(int id) {
+	public Teacher getTeacherById(Integer id) {
 		Teacher teacher = em.find(Teacher.class, id);
 
 		return teacher;
@@ -46,11 +46,10 @@ public class TeacherDAOImpl implements TeacherDAO {
 	}
 
 	@Override
-	public boolean removeTeacher(Teacher teacher) {
-		em.getTransaction().begin();
+	public boolean removeTeacher(int teacherId) {
+		Teacher teacher = em.find(Teacher.class, teacherId);
 		em.remove(teacher);
 		em.flush();
-		em.getTransaction().commit();
 		if (em.contains(teacher)) {
 			return false;
 		} else {

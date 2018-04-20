@@ -16,7 +16,7 @@
 				value="jdbc:mysql://localhost:3306/meditationdb" />
 			<property name="javax.persistence.jdbc.user" value="meditationuser" />
 			<property name="javax.persistence.jdbc.password"
-				value="silasamadhipanna" />
+				value="azsxdcfvgbhnjm" />
 			<property name="javax.persistence.jdbc.driver"
 				value="com.mysql.jdbc.Driver" />
 

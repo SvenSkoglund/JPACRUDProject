@@ -29,9 +29,10 @@ public class BookDAOImpl implements BookDAO {
 	@Override
 	public Book getBookById(int id) {
 		Book book = em.find(Book.class, id);
-		return null;
+		return book;
 	}
 
+	@Transactional
 	@Override
 	public Book addBook(Book book) {
 		em.getTransaction().begin();
@@ -41,19 +42,19 @@ public class BookDAOImpl implements BookDAO {
 		return book;
 	}
 
+	@Transactional
 	@Override
-	public boolean removeBook(Book book) {
-		em.getTransaction().begin();
+	public boolean removeBook(int bookId) {
+		Book book = getBookById(bookId);
 		em.remove(book);
 		em.flush();
-		em.getTransaction().commit();
 		if (em.contains(book)) {
 			return false;
 		} else {
 			return true;
 		}
 	}
-
+	@Transactional
 	@Override
 	public Book updateBook(Book book) {
 		Book managed = em.find(Book.class, book.getId());

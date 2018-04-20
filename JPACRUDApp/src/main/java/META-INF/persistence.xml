@@ -7,14 +7,16 @@
 	<persistence-unit name="CrudApp">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider
     </provider>
-<!-- Add entities persistenct class here 		<class>com.skilldistillery.jpacrud.entities.CHANGEME</class> -->
+	<class>com.skilldistillery.jpacrud.entities.Teacher</class> 
+	<class>com.skilldistillery.jpacrud.entities.Center</class> 
+	<class>com.skilldistillery.jpacrud.entities.Book</class> 
 
 		<properties>
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:mysql://localhost:3306/CHANGEMEFORNEWDB" />
-			<property name="javax.persistence.jdbc.user" value="CHANGEME" />
+				value="jdbc:mysql://localhost:3306/meditationdb" />
+			<property name="javax.persistence.jdbc.user" value="meditationuser" />
 			<property name="javax.persistence.jdbc.password"
-				value="CHANGEME" />
+				value="silasamadhipanna" />
 			<property name="javax.persistence.jdbc.driver"
 				value="com.mysql.jdbc.Driver" />
 

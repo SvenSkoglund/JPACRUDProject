@@ -15,5 +15,5 @@ include 'api'
 include 'services:webservice'
 */
 
-rootProject.name = 'MeditationCenters'
+rootProject.name = 'MeditationResources'
 includeFlat 'JPACRUDApp'

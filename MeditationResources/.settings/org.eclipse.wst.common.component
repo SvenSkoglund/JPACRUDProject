@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-modules id="moduleCoreId" project-version="1.5.0">
-	<wb-module deploy-name="MeditationCenters">
-		<property name="context-root" value="MeditationCenters"/>
+	<wb-module deploy-name="MeditationResources">
+		<property name="context-root" value="MeditationResources"/>
 		<wb-resource deploy-path="/WEB-INF/classes" source-path="src/main/java"/>
 		<wb-resource deploy-path="/" source-path="WebContent"/>
 		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/JPACRUDApp/JPACRUDApp">

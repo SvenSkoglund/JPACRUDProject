@@ -12,7 +12,7 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>${center.name }</title>
+<title>${message}</title>
 </head>
 <body>
 	<style type="text/css">
@@ -40,32 +40,12 @@ div {
 }
 </style>
 
-	<div>
+		<div>
+			<h1>
+				${teacher.firstName} ${teacher.lastName } updated
 
-		<h1>${center.name}</h1>
-		<h5>
-			<p>${center.country}</p>
-			<p>${center.tradition}</p>
-			<h5>
-				<p>${center.address}</p>
-				<h5>
-					<p>${center.city},${center.state } ${center.postalCode }</p>
-					<p>${center.description}</p>
-					<h5>
-						<a class="center" href="deleteCenter.do?centerId=${center.id }">Delete
-							Center</a> <a class="center"
-							href="updateCenter.do?centerId=${center.id }">Update Center</a>
-							<a class="center" href="delete.do?centerId=${center.id }&bookId=0&teacherId=0">Delete
-					Center</a>
-
-
-						<h5>
-							<p>${center.map}</p>
-							<h5>
-								<br>
-
-								<%-- 	<p>${film.description}</p> --%>
-	</div>
+				<%-- 	<p>${film.description}</p> --%>
+		</div>
 
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

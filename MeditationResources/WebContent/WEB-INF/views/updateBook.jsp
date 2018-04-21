@@ -12,7 +12,7 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>${center.name }</title>
+<title>${book.title }</title>
 </head>
 <body>
 	<style type="text/css">
@@ -40,32 +40,20 @@ div {
 }
 </style>
 
-	<div>
+	<form action="update.do">
+		<input type="hidden" name="bookId" value="${book.id }"> <input
+			type="text" name="title" placeholder="${book.title }"><br>
+		<input type="text" name="authorFirstName"
+			placeholder="${book.authorFirstName }"><br> <input
+			type="text" name="authorLastName"
+			placeholder="${book.authorLastName }"><br> <input
+			type="text" name="description" placeholder="${book.description }">
+		<input type="text" name="releaseYear"
+			placeholder="${book.releaseYear }"> <input type="text"
+			name="coverUrl" placeholder="${book.coverUrl }"> <input
+			type="submit" name="update" value="Submit"> <br>
 
-		<h1>${center.name}</h1>
-		<h5>
-			<p>${center.country}</p>
-			<p>${center.tradition}</p>
-			<h5>
-				<p>${center.address}</p>
-				<h5>
-					<p>${center.city},${center.state } ${center.postalCode }</p>
-					<p>${center.description}</p>
-					<h5>
-						<a class="center" href="deleteCenter.do?centerId=${center.id }">Delete
-							Center</a> <a class="center"
-							href="updateCenter.do?centerId=${center.id }">Update Center</a>
-							<a class="center" href="delete.do?centerId=${center.id }&bookId=0&teacherId=0">Delete
-					Center</a>
-
-
-						<h5>
-							<p>${center.map}</p>
-							<h5>
-								<br>
-
-								<%-- 	<p>${film.description}</p> --%>
-	</div>
+	</form>
 
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

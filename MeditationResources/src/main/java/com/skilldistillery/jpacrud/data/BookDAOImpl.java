@@ -56,18 +56,17 @@ public class BookDAOImpl implements BookDAO {
 	}
 	@Transactional
 	@Override
-	public Book updateBook(Book book) {
-		Book managed = em.find(Book.class, book.getId());
-		em.getTransaction().begin();
+	public Book updateBook(int id, Book book) {
+		Book managed = em.find(Book.class, id);
+
 		managed.setAuthorFirstName(book.getAuthorFirstName());
 		managed.setAuthorLastName(book.getAuthorLastName());
 		managed.setTitle(book.getTitle());
 		managed.setDescription(book.getTitle());
 		managed.setReleaseYear(book.getReleaseYear());
 		managed.setCoverUrl(book.getCoverUrl());
-
+		em.persist(managed);
 		em.flush();
-		em.getTransaction().commit();
 
 		return managed;
 	}

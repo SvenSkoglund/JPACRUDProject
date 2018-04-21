@@ -54,8 +54,8 @@ public class CenterDAOImpl implements CenterDAO {
 	}
 
 	@Override
-	public Center updateCenter(Center center) {
-		Center managed = em.find(Center.class, center.getId());
+	public Center updateCenter(int id, Center center) {
+		Center managed = em.find(Center.class, id);
 		
 		managed.setName(center.getName());
 		managed.setDescription(center.getDescription());
@@ -67,6 +67,7 @@ public class CenterDAOImpl implements CenterDAO {
 		managed.setPostalCode(center.getPostalCode());
 		managed.setMap(center.getMap());
 		
+		em.persist(managed);
 		em.flush();
 
 		return managed;

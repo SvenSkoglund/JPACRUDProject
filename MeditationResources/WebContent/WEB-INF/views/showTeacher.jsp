@@ -47,9 +47,12 @@ div {
 			<h5>
 				<p>${teacher.description}</p>
 				<h5>
-					<a class="center" href="deleteTeacher.do?teacherId=${teacher.id }">Delete
-						Teacher</a>
-
+						<a class="teacher"
+							href="deleteTeacher.do?teacherId=${teacher.id }">Delete
+							Teacher</a> <a class="teacher"
+							href="updateTeacher.do?teacherId=${teacher.id }">Update
+							Teacher</a><a class="teacher"
+							href="delete.do?teacherId=${teacher.id }&bookId=0&centerId=0">Delete Teacher</a>
 					<%-- 	<p>${film.description}</p> --%>
 	</div>
 

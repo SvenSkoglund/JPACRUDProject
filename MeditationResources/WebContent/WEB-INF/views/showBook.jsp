@@ -45,8 +45,14 @@ div {
 		<h5>
 			<p>${book.authorFirstName}${book.authorLastName}</p>
 			<p>${book.description}</p>
+			<p>${book.releaseYear}</p>
+
 			<h5>
-				<a class="book" href="deleteBook.do?bookId=${book.id }">Delete Book</a>
+				<a class="book" href="deleteBook.do?bookId=${book.id }">Delete
+					Book</a> <a class="book" href="updateBook.do?bookId=${book.id }">Update
+					Book</a>
+					<a class="book" href="delete.do?bookId=${book.id }&teacherId=0&centerId=0">Delete
+					Book</a>
 
 				<%-- 	<p>${film.description}</p> --%>
 	</div>

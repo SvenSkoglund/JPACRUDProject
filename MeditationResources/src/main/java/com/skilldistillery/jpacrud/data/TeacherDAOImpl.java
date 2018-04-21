@@ -58,17 +58,15 @@ public class TeacherDAOImpl implements TeacherDAO {
 	}
 
 	@Override
-	public Teacher updateTeacher(Teacher teacher) {
-		Teacher managed = em.find(Teacher.class, teacher.getId());
-		em.getTransaction().begin();
+	public Teacher updateTeacher(int id, Teacher teacher) {
+		Teacher managed = em.find(Teacher.class, id);
 		
 		managed.setFirstName(teacher.getFirstName());
 		managed.setLastName(teacher.getLastName());
 		managed.setTradition(teacher.getTradition());
 		managed.setDescription(teacher.getDescription());
-		
+		em.persist(managed);
 		em.flush();
-		em.getTransaction().commit();
 
 		return managed;
 	}

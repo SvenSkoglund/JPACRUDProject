@@ -18,8 +18,8 @@
 </head>
 <body>
 	
-	<div>
-					<img alt="teacherImage" src="images/teacher${book.id }.jpg">
+	<div class=listItem>
+					<img alt="teacherImage" src="images/teacher${teacher.id }.jpg">
 	
 		<h5>
 			${teacher.firstName} ${teacher.lastName}

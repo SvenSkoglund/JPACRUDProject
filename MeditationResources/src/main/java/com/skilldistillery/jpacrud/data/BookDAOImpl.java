@@ -35,10 +35,8 @@ public class BookDAOImpl implements BookDAO {
 	@Transactional
 	@Override
 	public Book addBook(Book book) {
-		em.getTransaction().begin();
 		em.persist(book);
 		em.flush();
-		em.getTransaction().commit();
 		return book;
 	}
 

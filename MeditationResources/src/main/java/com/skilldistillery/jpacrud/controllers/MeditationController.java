@@ -129,36 +129,74 @@ public class MeditationController {
 	}
 
 	@RequestMapping(path = "delete.do", method = RequestMethod.GET)
-	public ModelAndView update(@RequestParam(name="bookId") int bookId, int centerId, int teacherId, Object object ) {
+	public ModelAndView update(@RequestParam(name = "bookId") int bookId, int centerId, int teacherId, Object object) {
 		ModelAndView mv = new ModelAndView();
-		if(bookId > 0) {
+		if (bookId > 0) {
 			boolean isDeleted = bDao.removeBook(bookId);
-				if (isDeleted) {
-					mv.addObject("message", "Deleted succesfully");
-				}else {
-					mv.addObject("message", "Unable to Delete");
-				}
-			mv.addObject("isDeleted", isDeleted);
-			
-		}else if (centerId > 0) {
-			boolean isDeleted = cDao.removeCenter(centerId);
 			if (isDeleted) {
 				mv.addObject("message", "Deleted succesfully");
-			}else {
+			} else {
 				mv.addObject("message", "Unable to Delete");
 			}
 			mv.addObject("isDeleted", isDeleted);
-			
-		}else if (teacherId > 0) {
+
+		} else if (centerId > 0) {
+			boolean isDeleted = cDao.removeCenter(centerId);
+			if (isDeleted) {
+				mv.addObject("message", "Deleted succesfully");
+			} else {
+				mv.addObject("message", "Unable to Delete");
+			}
+			mv.addObject("isDeleted", isDeleted);
+
+		} else if (teacherId > 0) {
 			boolean isDeleted = tDao.removeTeacher(teacherId);
 			if (isDeleted) {
 				mv.addObject("message", "Deleted succesfully");
-			}else {
+			} else {
 				mv.addObject("message", "Unable to Delete");
 			}
 			mv.addObject("isDeleted", isDeleted);
 		}
 		mv.setViewName("WEB-INF/views/delete.jsp");
+		return mv;
+	}
+
+	@RequestMapping(path = "add.do", method = RequestMethod.GET)
+	public ModelAndView add(int bookId, int centerId, int teacherId) {
+		ModelAndView mv = new ModelAndView();
+
+		mv.addObject("bookId", bookId);
+		mv.addObject("centerId", centerId);
+		mv.addObject("teacherId", teacherId);
+		mv.setViewName("WEB-INF/views/add.jsp");
+		return mv;
+	}
+
+	@RequestMapping(path = "addBook.do", method = RequestMethod.GET)
+	public ModelAndView addBook(Book book) {
+		ModelAndView mv = new ModelAndView();
+		bDao.addBook(book);
+		mv.addObject("book", 1);
+		mv.setViewName("WEB-INF/views/added.jsp");
+		return mv;
+	}
+
+	@RequestMapping(path = "addCenter.do", method = RequestMethod.GET)
+	public ModelAndView addCenter(Center center) {
+		ModelAndView mv = new ModelAndView();
+		cDao.addCenter(center);
+		mv.addObject("center", 1);
+		mv.setViewName("WEB-INF/views/added.jsp");
+		return mv;
+	}
+
+	@RequestMapping(path = "addTeacher.do", method = RequestMethod.GET)
+	public ModelAndView addTeacher(Teacher teacher) {
+		ModelAndView mv = new ModelAndView();
+		tDao.addTeacher(teacher);
+		mv.addObject("teacher", 1);
+		mv.setViewName("WEB-INF/views/added.jsp");
 		return mv;
 	}
 

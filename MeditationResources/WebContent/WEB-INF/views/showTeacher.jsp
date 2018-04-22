@@ -8,6 +8,8 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
+		  <link rel="stylesheet" href="css/stylesheet.css">
+	
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,32 +17,10 @@
 <title>${teacher.firstName }${teacher.lastName }</title>
 </head>
 <body>
-	<style type="text/css">
-body {
-	padding: 10px;
-	background-color: lightblue;
-}
-
-.filmTitle {
-	text-shadow: 1px 1px black;
-	text-decoration: underline;
-	text-decoration-style: wavy;
-}
-
-form {
-	align-content: flex-end;
-}
-
-div {
-	text-align: center;
-	background-color: white;
-	border: 2px solid black;
-	padding: 10px;
-	margin: 5px;
-}
-</style>
-
+	
 	<div>
+					<img alt="teacherImage" src="images/teacher${book.id }.jpg">
+	
 		<h5>
 			${teacher.firstName} ${teacher.lastName}
 			<p>${teacher.tradition}</p>
@@ -51,8 +31,7 @@ div {
 							href="deleteTeacher.do?teacherId=${teacher.id }">Delete
 							Teacher</a> <a class="teacher"
 							href="updateTeacher.do?teacherId=${teacher.id }">Update
-							Teacher</a><a class="teacher"
-							href="delete.do?teacherId=${teacher.id }&bookId=0&centerId=0">Delete Teacher</a>
+							Teacher</a>
 					<%-- 	<p>${film.description}</p> --%>
 	</div>
 

@@ -8,6 +8,8 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
+		  <link rel="stylesheet" href="css/stylesheet.css">
+	
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,30 +17,6 @@
 <title>${book.title }</title>
 </head>
 <body>
-	<style type="text/css">
-body {
-	padding: 10px;
-	background-color: lightblue;
-}
-
-.filmTitle {
-	text-shadow: 1px 1px black;
-	text-decoration: underline;
-	text-decoration-style: wavy;
-}
-
-form {
-	align-content: flex-end;
-}
-
-div {
-	text-align: center;
-	background-color: white;
-	border: 2px solid black;
-	padding: 10px;
-	margin: 5px;
-}
-</style>
 
 	<div>
 		<h1>${book.title}</h1>
@@ -51,8 +29,7 @@ div {
 				<a class="book" href="deleteBook.do?bookId=${book.id }">Delete
 					Book</a> <a class="book" href="updateBook.do?bookId=${book.id }">Update
 					Book</a>
-					<a class="book" href="delete.do?bookId=${book.id }&teacherId=0&centerId=0">Delete
-					Book</a>
+			
 
 				<%-- 	<p>${film.description}</p> --%>
 	</div>

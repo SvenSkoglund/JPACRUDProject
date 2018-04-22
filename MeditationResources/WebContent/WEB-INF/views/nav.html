@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+pageEncoding="UTF-8"%> <%@ taglib prefix="c"
+uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,15 +8,16 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
-		  <link rel="stylesheet" href="css/stylesheet.css">
-	
+<link rel="stylesheet" href="css/stylesheet.css">
+
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Books</title>
+<title>Navbar</title>
 </head>
 <body>
+	<!-- Navigation -->
 	<nav
 		class="navbar navbar-expand-lg bg-secondary static-top text-uppercase"
 		id="mainNav">
@@ -46,25 +47,6 @@
 		</div>
 	</div>
 	</nav>
-
-	<c:forEach items="${books}" var="book">
-		<div class="listItem">
-				<img alt="bookImage" src="images/book${book.id }.jpg">
-			<h5>
-				<a class="book" href="showBook.do?bookId=${book.id }">${book.title}</a>
-				<p>${book.authorFirstName} ${book.authorLastName}</p>
-				<h5>
-		</div>
-
-	</c:forEach>
-	
-		<div class="listItem">
-		<h5>
-			<a class="book"
-				href="add.do?bookId=1&teacherId=0&centerId=0">Add
-				Book</a>
-		</h5>
-	</div>
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

@@ -8,31 +8,35 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
-		  <link rel="stylesheet" href="css/stylesheet.css">
-	
+<link rel="stylesheet" href="css/stylesheet.css">
+
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>${teacher.firstName }${teacher.lastName }</title>
+<title>Test</title>
 </head>
 <body>
 
+	<c:if test="${book > 0}">
+		<div class="listItem">
+				<h1>Book Added</h1>
+		</div>
+	</c:if>
+	<c:if test="${center > 0}">
+		<h1>Test</h1>
+		<div class="listItem">
+		<h1>Center Added</h1>
 
-	<form action="update.do">
-		<input type="hidden" name="centerId" value="${center.id }"> <input
-			type="text" name="name" placeholder="${center.name }"><br>
-		<input type="text" name="tradition" placeholder="${center.tradition }"><br>
-		<input type="text" name="address"
-			placeholder="${center.address }"><br> <input
-			type="text" name="city" placeholder="${center.city }"> <input
-			type="text" name="state" placeholder="${center.state }"> <input
-			type="text" name="country" placeholder="${center.country }"> <input
-			type="text" name="postalCode" placeholder="${center.postalCode }"> <input
-			type="text" name="map" placeholder="Paste a google map html embed"><br>
-		<input type="submit" name="update" value="Submit"> <br>
+		</div>
 
-	</form>
+	</c:if>
+	<c:if test="${teacher > 0}">
+		<div class="listItem">
+		<h1> Teacher Added</h1>
+		</div>
+
+	</c:if>
 
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

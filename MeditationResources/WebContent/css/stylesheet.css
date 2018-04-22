@@ -1,0 +1,52 @@
+body {
+	padding: 2%;
+}
+
+.indexform {
+	border: 10px solid black;
+	align-items: center;
+}
+
+.nav-link {
+	color: black;
+}
+
+.navbar-brand {
+	color: black;
+}
+.centerCRUD {
+	border: 1px solid black;
+	color: black;
+}
+
+body {
+	padding-top: 65px;
+	padding: 10px;
+	background-color: black;
+}
+
+.filmTitle {
+	text-shadow: 1px 1px black;
+	text-decoration: underline;
+	text-decoration-style: wavy;
+}
+
+form {
+	align-content: flex-end;
+}
+
+img {
+	width: 50%;
+	border: 1px solid black;
+}
+
+.listItem {
+	text-align: center;
+	background-color: darkgrey;
+	border: 2px solid black;
+	padding: 10px;
+	margin: 5px;
+	width: 50%;
+	margin-left: 23%;
+	margin-right: 23%;
+}

@@ -38,10 +38,8 @@ public class TeacherDAOImpl implements TeacherDAO {
 
 	@Override
 	public Teacher addTeacher(Teacher teacher) {
-		em.getTransaction().begin();
 		em.persist(teacher);
 		em.flush();
-		em.getTransaction().commit();
 		return teacher;
 	}
 

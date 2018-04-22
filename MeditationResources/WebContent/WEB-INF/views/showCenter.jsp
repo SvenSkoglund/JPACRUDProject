@@ -8,6 +8,8 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
+		  <link rel="stylesheet" href="css/stylesheet.css">
+	
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,32 +17,8 @@
 <title>${center.name }</title>
 </head>
 <body>
-	<style type="text/css">
-body {
-	padding: 10px;
-	background-color: lightblue;
-}
-
-.filmTitle {
-	text-shadow: 1px 1px black;
-	text-decoration: underline;
-	text-decoration-style: wavy;
-}
-
-form {
-	align-content: flex-end;
-}
-
-div {
-	text-align: center;
-	background-color: white;
-	border: 2px solid black;
-	padding: 10px;
-	margin: 5px;
-}
-</style>
-
-	<div>
+	
+	<div class="listItem">
 
 		<h1>${center.name}</h1>
 		<h5>
@@ -52,11 +30,9 @@ div {
 					<p>${center.city},${center.state } ${center.postalCode }</p>
 					<p>${center.description}</p>
 					<h5>
-						<a class="center" href="deleteCenter.do?centerId=${center.id }">Delete
-							Center</a> <a class="center"
+						<a class="centerCRUD" href="deleteCenter.do?centerId=${center.id }">Delete
+							Center</a> <a class="centerCRUD"
 							href="updateCenter.do?centerId=${center.id }">Update Center</a>
-							<a class="center" href="delete.do?centerId=${center.id }&bookId=0&teacherId=0">Delete
-					Center</a>
 
 
 						<h5>

@@ -1,36 +1,43 @@
 	import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import com.skilldistillery.jpacrud.data.BookDAO;
+import com.skilldistillery.jpacrud.data.BookDAOImpl;
 import com.skilldistillery.jpacrud.data.CenterDAO;
+import com.skilldistillery.jpacrud.data.CenterDAOImpl;
 import com.skilldistillery.jpacrud.data.TeacherDAO;
+import com.skilldistillery.jpacrud.data.TeacherDAOImpl;
 import com.skilldistillery.jpacrud.entities.Teacher;
 
 class EntityTest {
 	
-	@PersistenceContext
+	private EntityManagerFactory emf;
 	private EntityManager em;
 	
-	@Autowired
 	TeacherDAO tDao;
-	@Autowired
 	CenterDAO cDao;
-	@Autowired
 	BookDAO bDao;
 
 	@BeforeEach
 	void setUp() throws Exception {
+		tDao = new TeacherDAOImpl();
+		cDao = new CenterDAOImpl();
+		bDao = new BookDAOImpl();
+		emf = Persistence.createEntityManagerFactory("CrudApp");
+		em =  emf.createEntityManager(); 
 	}
+
 
 	@AfterEach
 	void tearDown() throws Exception {
+		tDao = null;
 	}
 
 	@Test
@@ -50,7 +57,9 @@ class EntityTest {
 		teacher.setTradition("testTradition2");
 		teacher.setDescription("testDescription2");
 		tDao.updateTeacher(managed.getId(), teacher);
-		assertEquals("testFirstName2", em.find(Teacher.class, managed.getId()));
+		assertEquals("testFirstName2", em.find(Teacher.class, managed.getId()).getFirstName());
+		
+		//
 	}
 
 }

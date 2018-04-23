@@ -8,8 +8,8 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
-		  <link rel="stylesheet" href="css/stylesheet.css">
-	
+<link rel="stylesheet" href="css/stylesheet.css">
+
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,8 +17,39 @@
 <title>${center.name }</title>
 </head>
 <body>
-	
+
+	<nav
+		class="navbar navbar-expand-lg bg-secondary static-top text-uppercase"
+		id="mainNav">
+	<div class="container">
+		<a class="navbar-brand js-scroll-trigger" href="index.do">Meditation
+			Resources</a>
+		<button
+			class="navbar-toggler navbar-toggler-right text-uppercase bg-primary rounded"
+			type="button" data-toggle="collapse" data-target="#navbarResponsive"
+			aria-controls="navbarResponsive" aria-expanded="false"
+			aria-label="Toggle navigation">
+
+			<i class="fa fa-bars"></i>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item mx-0 mx-lg-1"><a
+					class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+					href="indexChoice.do?choice=books">Books</a></li>
+				<li class="nav-item mx-0 mx-lg-1"><a
+					class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+					href="indexChoice.do?choice=teachers">Teachers</a></li>
+				<li class="nav-item mx-0 mx-lg-1"><a
+					class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+					href="indexChoice.do?choice=centers">Centers</a></li>
+			</ul>
+		</div>
+	</div>
+	</nav>
+
 	<div class="listItem">
+		<img alt="centerImage" src="images/center${center.id }.jpg">
 
 		<h1>${center.name}</h1>
 		<h5>
@@ -27,12 +58,13 @@
 			<h5>
 				<p>${center.address}</p>
 				<h5>
-					<p>${center.city},${center.state } ${center.postalCode }</p>
+					<p>${center.city},${center.state }${center.postalCode }</p>
 					<p>${center.description}</p>
 					<h5>
-						<a class="centerCRUD" href="deleteCenter.do?centerId=${center.id }">Delete
-							Center</a> <a class="centerCRUD"
-							href="updateCenter.do?centerId=${center.id }">Update Center</a>
+						<a class="centerCRUD"
+							href="deleteCenter.do?centerId=${center.id }">Delete Center</a> <a
+							class="centerCRUD" href="updateCenter.do?centerId=${center.id }">Update
+							Center</a>
 
 
 						<h5>

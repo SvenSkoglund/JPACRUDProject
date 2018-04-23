@@ -17,11 +17,42 @@
 <title>${book.title }</title>
 </head>
 <body>
+	<nav
+		class="navbar navbar-expand-lg bg-secondary static-top text-uppercase"
+		id="mainNav">
+	<div class="container">
+		<a class="navbar-brand js-scroll-trigger" href="index.do">Meditation
+			Resources</a>
+		<button
+			class="navbar-toggler navbar-toggler-right text-uppercase bg-primary rounded"
+			type="button" data-toggle="collapse" data-target="#navbarResponsive"
+			aria-controls="navbarResponsive" aria-expanded="false"
+			aria-label="Toggle navigation">
 
-	<div>
+			<i class="fa fa-bars"></i>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item mx-0 mx-lg-1"><a
+					class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+					href="indexChoice.do?choice=books">Books</a></li>
+				<li class="nav-item mx-0 mx-lg-1"><a
+					class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+					href="indexChoice.do?choice=teachers">Teachers</a></li>
+				<li class="nav-item mx-0 mx-lg-1"><a
+					class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+					href="indexChoice.do?choice=centers">Centers</a></li>
+			</ul>
+		</div>
+	</div>
+	</nav>
+	<div class="listItem">
+						<img alt="bookImage" src="images/book${book.id }.jpg">
+	
 		<h1>${book.title}</h1>
 		<h5>
-			<p>${book.authorFirstName}${book.authorLastName}</p>
+		
+			<p>${book.authorFirstName} ${book.authorLastName}</p>
 			<p>${book.description}</p>
 			<p>${book.releaseYear}</p>
 

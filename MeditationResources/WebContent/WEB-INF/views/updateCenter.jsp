@@ -8,8 +8,8 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
-		  <link rel="stylesheet" href="css/stylesheet.css">
-	
+<link rel="stylesheet" href="css/stylesheet.css">
+
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,23 +17,54 @@
 <title>${teacher.firstName }${teacher.lastName }</title>
 </head>
 <body>
+	<nav
+		class="navbar navbar-expand-lg bg-secondary static-top text-uppercase"
+		id="mainNav">
+	<div class="container">
+		<a class="navbar-brand js-scroll-trigger" href="index.do">Meditation
+			Resources</a>
+		<button
+			class="navbar-toggler navbar-toggler-right text-uppercase bg-primary rounded"
+			type="button" data-toggle="collapse" data-target="#navbarResponsive"
+			aria-controls="navbarResponsive" aria-expanded="false"
+			aria-label="Toggle navigation">
 
+			<i class="fa fa-bars"></i>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item mx-0 mx-lg-1"><a
+					class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+					href="indexChoice.do?choice=books">Books</a></li>
+				<li class="nav-item mx-0 mx-lg-1"><a
+					class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+					href="indexChoice.do?choice=teachers">Teachers</a></li>
+				<li class="nav-item mx-0 mx-lg-1"><a
+					class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+					href="indexChoice.do?choice=centers">Centers</a></li>
+			</ul>
+		</div>
+	</div>
+	</nav>
 
-	<form action="update.do">
-		<input type="hidden" name="centerId" value="${center.id }"> <input
-			type="text" name="name" placeholder="${center.name }"><br>
-		<input type="text" name="tradition" placeholder="${center.tradition }"><br>
-		<input type="text" name="address"
-			placeholder="${center.address }"><br> <input
-			type="text" name="city" placeholder="${center.city }"> <input
-			type="text" name="state" placeholder="${center.state }"> <input
-			type="text" name="country" placeholder="${center.country }"> <input
-			type="text" name="postalCode" placeholder="${center.postalCode }"> <input
-			type="text" name="map" placeholder="Paste a google map html embed"><br>
-		<input type="submit" name="update" value="Submit"> <br>
+	<div class="listItem">
+	<h1>Update Center</h1>
+		<form action="update.do">
+			<input type="hidden" name="centerId" value="${center.id }"><br> <input
+				type="text" name="name" placeholder="${center.name }"><br>
+			<input type="text" name="tradition"
+				placeholder="${center.tradition }"><br> <input
+				type="text" name="address" placeholder="${center.address }"><br>
+			<input type="text" name="city" placeholder="${center.city }"><br>
+			<input type="text" name="state" placeholder="${center.state }"><br>
+			<input type="text" name="country" placeholder="${center.country }"><br>
+			<input type="text" name="postalCode"
+				placeholder="${center.postalCode }"> <br><input type="text"
+				name="map" placeholder="Paste a google map html embed"><br>
+			<input type="submit" name="update" value="Submit"> <br>
 
-	</form>
-
+		</form>
+	</div>
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

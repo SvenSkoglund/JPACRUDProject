@@ -17,42 +17,49 @@
 <title>${teacher.firstName }${teacher.lastName }</title>
 </head>
 <body>
-	<style type="text/css">
-body {
-	padding: 10px;
-	background-color: lightblue;
-}
+	<nav
+		class="navbar navbar-expand-lg bg-secondary static-top text-uppercase"
+		id="mainNav">
+	<div class="container">
+		<a class="navbar-brand js-scroll-trigger" href="index.do">Meditation
+			Resources</a>
+		<button
+			class="navbar-toggler navbar-toggler-right text-uppercase bg-primary rounded"
+			type="button" data-toggle="collapse" data-target="#navbarResponsive"
+			aria-controls="navbarResponsive" aria-expanded="false"
+			aria-label="Toggle navigation">
 
-.filmTitle {
-	text-shadow: 1px 1px black;
-	text-decoration: underline;
-	text-decoration-style: wavy;
-}
+			<i class="fa fa-bars"></i>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item mx-0 mx-lg-1"><a
+					class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+					href="indexChoice.do?choice=books">Books</a></li>
+				<li class="nav-item mx-0 mx-lg-1"><a
+					class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+					href="indexChoice.do?choice=teachers">Teachers</a></li>
+				<li class="nav-item mx-0 mx-lg-1"><a
+					class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+					href="indexChoice.do?choice=centers">Centers</a></li>
+			</ul>
+		</div>
+	</div>
+	</nav>
 
-form {
-	align-content: flex-end;
-}
+	<div class="listItem">
+	<h1>Update Teacher</h1>
+		<form action="update.do">
+			<input type="hidden" name="id" value="${teacher.id }"> <input
+				type="text" name="firstName" placeholder="${teacher.firstName }"><br>
+			<input type="text" name="lastName" placeholder="${teacher.lastName }"><br>
+			<input type="text" name="tradition"
+				placeholder="${teacher.tradition }"><br> <input
+				type="text" name="description" placeholder="${teacher.description }"><br>
+			<input type="submit" name="update" value="Submit"> <br>
 
-div {
-	text-align: center;
-	background-color: white;
-	border: 2px solid black;
-	padding: 10px;
-	margin: 5px;
-}
-</style>
-
-	<form action="update.do">
-		<input type="hidden" name="id" value="${teacher.id }"> <input
-			type="text" name="firstName" placeholder="${teacher.firstName }"><br>
-		<input type="text" name="lastName" placeholder="${teacher.lastName }"><br>
-		<input type="text" name="tradition"
-			placeholder="${teacher.tradition }"><br> <input
-			type="text" name="description" placeholder="${teacher.description }"><br>
-		<input type="submit" name="update" value="Submit"> <br>
-
-	</form>
-
+		</form>
+	</div>
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
